@@ -1,0 +1,22 @@
+{
+  "name": "mimikiyru-utils",
+  "version": "0.0.1",
+  "description": "utils list for others projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YouHan26/mimikiyru-utils.git"
+  },
+  "keywords": [
+    "util"
+  ],
+  "author": "YouHan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YouHan26/mimikiyru-utils/issues"
+  },
+  "homepage": "https://github.com/YouHan26/mimikiyru-utils#readme"
+}
