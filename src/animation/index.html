@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>图片轮播</title>
+    <meta charset="utf-5"/>
+    <style>
+        .fadeIn {
+            opacity: 1 !important;
+            z-index: 1 !important;
+        }
+
+        .fadeOUt {
+            opacity: 0 !important;
+            z-index: 0 !important;
+        }
+
+        .carousel {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel img {
+            width: 1500px;
+            height: 700px;
+            z-index: 0;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            opacity: 0;
+            -webkit-transition: opacity 0.5s ease-in;
+            -moz-transition: opacity 0.5s ease-in;
+            -ms-transition: opacity 0.5s ease-in;
+            -o-transition: opacity 0.5s ease-in;
+            transition: opacity 0.5s ease-in;
+        }
+
+        .move-right {
+            animation-duration: 10s;
+            animation-name: move-right;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes move-right {
+            0% {
+                margin-left: -100px;
+                margin-top: -100px;
+            }
+
+            100% {
+                margin-left: -50px;
+                margin-top: -100px;
+            }
+        }
+
+        .move-top {
+            animation-duration: 10s;
+            animation-name: move-top;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes move-top {
+            0% {
+                margin-left: -50px;
+                margin-top: -50px;
+            }
+
+            100% {
+                margin-left: -50px;
+                margin-top: -100px;
+            }
+        }
+
+        .move-left {
+            animation-duration: 4s;
+            animation-name: move-left;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes move-left {
+            0% {
+                margin-left: -50px;
+                margin-top: -100px;
+            }
+
+            100% {
+                margin-left: -100px;
+                margin-top: -100px;
+            }
+        }
+
+        .move-bottom {
+            animation-duration: 4s;
+            animation-name: move-bottom;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes move-bottom {
+            0% {
+                margin-left: -50px;
+                margin-top: -100px;
+            }
+
+            100% {
+                margin-left: -50px;
+                margin-top: -50px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="carousel">
+    <img src="1.jpg"/>
+    <img src="2.jpg"/>
+    <img src="3.jpg"/>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="fade.js"></script>
+</body>
+</html>
