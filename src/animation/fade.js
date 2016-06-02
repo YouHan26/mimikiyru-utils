@@ -13,7 +13,6 @@
     setInterval(function () {
         var current = array[index++ % len];
         var next = array[index % len];
-
         $(current).removeClass('fadeIn');
         $(current).addClass('fadeOUt');
         setTimeout(function () {

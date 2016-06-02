@@ -11,6 +11,8 @@
         ctx = canvas.getContext('2d');
     }
 
+    canvas.width = window.innerWidth;
+
     var max = 50,
         starP = [],
         width = canvas.width,
@@ -23,14 +25,25 @@
         drawLines();
     }, 20);
 
+
+    canvas.addEventListener('mousemove', function (evt) {
+        starP[max - 1] = {
+            x: evt.clientX - 8,
+            y: evt.clientY - 8
+        };
+    }, false);
+
     function drawLines() {
-        for (var i = 0; i < (max || 10); i++) {
-            for (var j = i + 1; j < (max || 10); j++) {
+        for (var i = 0; i < (max ); i++) {
+            for (var j = i + 1; j < (max); j++) {
                 var px = starP[i],
-                    py = starP[j],
-                    xx = px.x - py.x,
+                    py = starP[j];
+                if (!py || !py.x) {
+                    return;
+                }
+                var xx = px.x - py.x,
                     yy = px.y - py.y,
-                    p = Math.sqrt(xx * xx + yy * yy) / 150;
+                    p = Math.sqrt(xx * xx + yy * yy) / 200;
                 if (p <= 1) {
                     drawLine(px, py, p);
                 }
@@ -46,11 +59,10 @@
         ctx.lineTo(dest.x, dest.y);
         ctx.stroke();
         ctx.closePath();
-        console.log(origin, dest, p);
     }
 
     function moveStar() {
-        for (var i = 0; i < (max || 10); i++) {
+        for (var i = 0; i < (max - 1); i++) {
             starP[i] = updateP(starP[i]);
             drawCircle(starP[i]);
         }
@@ -80,7 +92,7 @@
     function initStar() {
         starP = [];
         ctx.fillStyle = 'white';
-        for (var i = 0; i < (max || 10); i++) {
+        for (var i = 0; i < (max - 1); i++) {
             var p = genP();
             starP.push(p);
             drawCircle(p);
