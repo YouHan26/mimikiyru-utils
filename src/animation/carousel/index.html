@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="carousel.css">
+</head>
+<body>
+
+<div class="carousel">
+    <img src="./../3.jpg" class="carousel-left">
+    <img src="./../2.jpg" class="carousel-middle">
+    <img src="./../1.jpg" class="carousel-right">
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    (function () {
+        var el = document.querySelectorAll('.carousel img');
+        for (var i = 0, ii = el.length; i < ii; i++) {
+            el[i].addEventListener('click', function (e) {
+                var element = e.currentTarget;
+                var className = element.getAttribute('class');
+                if (className === 'carousel-middle') {
+                    return;
+                } else if (className === 'carousel-left') {
+                    document.querySelector('.carousel img.carousel-right').className = 'carousel-left';
+                    document.querySelector('.carousel img.carousel-middle').className = 'carousel-right';
+                    element.className = 'carousel-middle';
+                } else {
+                    document.querySelector('.carousel img.carousel-left').className = 'carousel-right';
+                    document.querySelector('.carousel img.carousel-middle').className = 'carousel-left';
+                    element.className = 'carousel-middle';
+                }
+            });
+        }
+    })();
+</script>
+
+
+</body>
+</html>

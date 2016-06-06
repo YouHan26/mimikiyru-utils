@@ -1,0 +1,39 @@
+.carousel {
+    width: 100%;
+    background-color: lightgrey;
+    position: relative;
+    height: 400px;
+}
+
+.carousel > img {
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.carousel-left {
+    width: 25%;
+    left: 20%;
+    right: 55%;
+    margin: auto;
+    z-index: 1;
+    transition: all 1s;
+}
+
+.carousel-middle {
+    width: 30%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    transition: all 1s;
+}
+
+.carousel-right {
+    width: 25%;
+    margin: auto;
+    right: 20%;
+    left: 55%;
+    z-index: 1;
+    transition: all 1s;
+}
