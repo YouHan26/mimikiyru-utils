@@ -1,0 +1,8 @@
+src/animation/
+src/canvas/
+src/client/
+src/utils/
+src/wbesocket/
+node_modules/
+test/
+.idea/
