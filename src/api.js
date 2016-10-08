@@ -46,7 +46,11 @@ function get(option) {
 function post(option) {
     return new Promise(function (resolver, rejector) {
         var xhr = new XMLHttpRequest();
-        xhr.setRequestHeader('Content-Type', option.contentType || 'application/json;charset=UTF-8');
+        if (option.contentType) {
+            xhr.setRequestHeader('Content-Type', option.contentType);
+        } else {
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+        }
         xhr.open('POST', option.url, true);
         xhr.send(JSON.stringify(option.data));
 
