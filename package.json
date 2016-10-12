@@ -1,6 +1,6 @@
 {
   "name": "mimikiyru-utils",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "utils list for others projects",
   "main": "index.js",
   "scripts": {
