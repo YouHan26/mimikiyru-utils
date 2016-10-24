@@ -4,6 +4,7 @@
 'use strict';
 
 var basic = {
+    copy : copy,
     extend: extend,
     baseExtend: baseExtend,
     isObject: isObject,
@@ -17,6 +18,10 @@ var basic = {
     isString: isString,
     isBlankObject: isBlankObject
 };
+
+function copy(data){
+    return JSON.parse(JSON.stringify(data));
+}
 
 function extend(dst) {
     return baseExtend(dst, slice.call(arguments, 1), false);
