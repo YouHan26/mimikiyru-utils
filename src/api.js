@@ -58,7 +58,7 @@ function del(option) {
     return new Promise(function (resolver, rejector) {
         var xhr = new XMLHttpRequest();
         xhr.open('DELETE', option.url, true);
-        xhr.setRequestHeader('Content-Type', option.contentType || 'application/json;charset=UTF-8');
+        xhr.send();
 
         xhr.onerror = function (error) {
             rejector(error);
