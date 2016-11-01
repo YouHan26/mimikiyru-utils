@@ -4,7 +4,7 @@
 'use strict';
 
 var basic = {
-    copy : copy,
+    copy : _copy,
     copy2 : copy2,
     extend: extend,
     baseExtend: baseExtend,
@@ -20,7 +20,7 @@ var basic = {
     isBlankObject: isBlankObject
 };
 
-function copy(obj) {
+function _copy(obj) {
     var copy;
 
     // Handle the 3 simple types, and null or undefined
@@ -37,7 +37,7 @@ function copy(obj) {
     if (obj instanceof Array) {
         copy = [];
         for (var i = 0, len = obj.length; i < len; i++) {
-            copy[i] = clone(obj[i]);
+            copy[i] = _copy(obj[i]);
         }
         return copy;
     }
@@ -46,7 +46,7 @@ function copy(obj) {
     if (obj instanceof Object) {
         copy = {};
         for (var attr in obj) {
-            if (obj.hasOwnProperty(attr)) copy[attr] = clone(obj[attr]);
+            if (obj.hasOwnProperty(attr)) copy[attr] = _copy(obj[attr]);
         }
         return copy;
     }
